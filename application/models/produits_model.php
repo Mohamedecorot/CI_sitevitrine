@@ -17,12 +17,11 @@ class Produits_model extends CI_Model
     }
 
 
-    public function get_produits($nb, $debut = 0)
+    public function get_produits()
     {
         return $this->db->select('`id`, `nom`, `description`, `categorie`, `illustration`, `prix`', false)
                 ->from($this->table)
                 ->order_by('id', 'desc')
-                ->limit($nb, $debut)
                 ->get()
                 ->result();
     }
